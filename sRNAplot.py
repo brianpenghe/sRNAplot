@@ -791,7 +791,7 @@ def overlap_plot(outname,bamfile,minlength,maxlength,minoverlap,maxoverlap):
 	bamsamcmd = "samtools view -h " + bamfile + " > " + bamfile.replace(".bam",".sam")
 	call(bamsamcmd, shell=True)
 	# calculate overlap signatures
-	sigcmd = "python3 ~/bin/signature.py " + bamfile.replace(".bam",".sam") + " " + str(minlength) + " " + str(maxlength) + " " + str(minoverlap) + " " + str(maxoverlap) + " " + "overlaptable.txt"
+	sigcmd = "python3 signature.py " + bamfile.replace(".bam",".sam") + " " + str(minlength) + " " + str(maxlength) + " " + str(minoverlap) + " " + str(maxoverlap) + " " + "overlaptable.txt"
 	call(sigcmd, shell=True)
 	overlap = []
 	zscore = []
